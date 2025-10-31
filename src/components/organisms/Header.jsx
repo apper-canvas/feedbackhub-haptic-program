@@ -1,6 +1,8 @@
-import { useState } from "react"
-import ApperIcon from "@/components/ApperIcon"
-import SearchBar from "@/components/molecules/SearchBar"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import UserMenu from "./UserMenu";
+import ApperIcon from "@/components/ApperIcon";
+import SearchBar from "@/components/molecules/SearchBar";
 
 const Header = ({ onMobileMenuToggle }) => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -38,13 +40,14 @@ const Header = ({ onMobileMenuToggle }) => {
           />
         </div>
 
-        <div className="flex items-center space-x-4">
+<div className="flex items-center space-x-4">
           <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
             <ApperIcon name="Bell" className="h-5 w-5 text-gray-600" />
           </button>
           <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
             <ApperIcon name="Settings" className="h-5 w-5 text-gray-600" />
           </button>
+          <UserMenu />
         </div>
       </div>
       
